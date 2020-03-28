@@ -23,15 +23,20 @@
       event.preventDefault();
       var item = document.getElementById("items").value;
       var list = document.getElementById('list-items');
-      list.innerHTML += `
-      <li class="container-item"> 
-        <span class="item"> ${item} </span>
-        <div class="div-btns">
-          <button class="add-item"> Check </button>
-          <button class="delete-item"> Delete </button>
-        </div>
-       </li>
-      `;
+      if(item != ""){
+        list.innerHTML += `
+        <li class="container-item"> 
+          <span class="item"> ${item} </span>
+          <div class="div-btns">
+            <button class="add-item"> Check </button>
+            <button class="delete-item"> Delete </button>
+          </div>
+        </li>
+        `;
+      }else{
+        alert("pls add a valid item");
+      }
+      document.getElementById("items").value = "";
     });
   }
   function init(){
